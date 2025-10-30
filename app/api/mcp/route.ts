@@ -8,6 +8,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Index } from "@upstash/vector";
 import Groq from "groq-sdk";
 import { z } from "zod";
+import { interviewPreparationPipeline } from "@/lib/interview-coach";
 
 // Environment variable validation
 const UPSTASH_VECTOR_REST_URL = process.env.UPSTASH_VECTOR_REST_URL;
@@ -49,6 +50,11 @@ function initializeClients() {
 const QueryDigitalTwinSchema = z.object({
   question: z.string().min(1, "Question cannot be empty"),
   topK: z.number().int().min(1).max(20).optional().default(3),
+  // Interview coaching options
+  enableCoaching: z.boolean().optional().default(true),
+  interviewerType: z.enum(["HR", "Technical", "Manager", "Executive"]).optional(),
+  jobRole: z.string().optional(),
+  companyType: z.enum(["Startup", "Enterprise", "Agency"]).optional(),
 });
 
 const SearchProfileSchema = z.object({
@@ -61,7 +67,7 @@ const SearchProfileSchema = z.object({
 const TOOLS = [
   {
     name: "query_digital_twin",
-    description: "Ask questions about the person's professional background, skills, experience, and career goals. Uses RAG to provide accurate, context-aware responses.",
+    description: "Ask questions about the person's professional background, skills, experience, and career goals. Uses RAG + LLM dual-layer architecture with interview coaching. Supports query preprocessing and STAR-formatted responses.",
     inputSchema: {
       type: "object",
       properties: {
@@ -73,6 +79,25 @@ const TOOLS = [
           type: "number",
           description: "Number of relevant results to retrieve (default: 3, max: 20)",
           default: 3,
+        },
+        enableCoaching: {
+          type: "boolean",
+          description: "Enable interview coaching mode with STAR format and tips (default: true)",
+          default: true,
+        },
+        interviewerType: {
+          type: "string",
+          enum: ["HR", "Technical", "Manager", "Executive"],
+          description: "Type of interviewer for context-aware responses (optional)",
+        },
+        jobRole: {
+          type: "string",
+          description: "Target job role for tailored responses (optional)",
+        },
+        companyType: {
+          type: "string",
+          enum: ["Startup", "Enterprise", "Agency"],
+          description: "Company type for cultural adaptation (optional)",
         },
       },
       required: ["question"],
@@ -131,10 +156,62 @@ async function executeTool(name: string, args: unknown) {
         throw new Error(`Invalid input: ${parsed.error.issues.map((e: { message: string }) => e.message).join(", ")}`);
       }
 
-      const { question, topK } = parsed.data;
-      console.log(`🔍 [${requestId}] Querying digital twin: "${question}" (topK: ${topK})`);
+      const { question, topK, enableCoaching, interviewerType, jobRole, companyType } = parsed.data;
+      console.log(`🔍 [${requestId}] Querying digital twin: "${question}" (topK: ${topK}, coaching: ${enableCoaching})`);
 
-      // Query vector database
+      // Use enhanced interview preparation pipeline if coaching is enabled
+      if (enableCoaching) {
+        try {
+          const result = await interviewPreparationPipeline({
+            question,
+            vectorSearch: async (query, k) => {
+              const results = await vectorIndex.query({
+                data: query,
+                topK: k,
+                includeMetadata: true,
+              });
+              
+              return results.map(r => ({
+                content: (r.metadata?.content as string) || "",
+                category: (r.metadata?.category as string) || undefined,
+                score: r.score,
+              }));
+            },
+            groqClient,
+            topK,
+            interviewContext: interviewerType || jobRole || companyType ? {
+              interviewerType,
+              jobRole,
+              companyType,
+            } : undefined,
+            enableQueryEnhancement: true,
+          });
+
+          const totalTime = Date.now() - startTime;
+          console.log(`✓ [${requestId}] Interview-coached response generated in ${totalTime}ms`);
+          console.log(`📊 [${requestId}] Metadata:`, {
+            questionType: result.metadata.questionType.type,
+            resultsCount: result.metadata.resultsCount,
+            enhancedQuery: result.metadata.enhancedQuery,
+          });
+
+          return {
+            content: [
+              {
+                type: "text",
+                text: result.answer,
+              },
+            ],
+          };
+        } catch (error) {
+          console.error(`❌ [${requestId}] Interview coaching failed, falling back to basic mode:`, error);
+          // Fall through to basic mode
+        }
+      }
+
+      // Basic mode (fallback or when coaching is disabled)
+      console.log(`📝 [${requestId}] Using basic response mode (coaching disabled or fallback)`);
+      
       const vectorSearchStart = Date.now();
       const results = await vectorIndex.query({
         data: question,
@@ -186,8 +263,8 @@ async function executeTool(name: string, args: unknown) {
 
       const context = sources.map((source) => `${source.title}: ${source.content}`).join("\n\n");
 
-      // Generate response with Groq
-      console.log(`🤖 [${requestId}] Generating AI response...`);
+      // Generate basic response with Groq
+      console.log(`🤖 [${requestId}] Generating basic AI response...`);
       const llmStart = Date.now();
 
       const prompt = `Based on the following information about yourself, answer the question.
@@ -220,7 +297,7 @@ Provide a helpful, professional response:`;
       const answer = completion.choices[0]?.message?.content?.trim() || "No response generated.";
 
       const totalTime = Date.now() - startTime;
-      console.log(`✓ [${requestId}] Response generated in ${llmTime}ms (total: ${totalTime}ms)`);
+      console.log(`✓ [${requestId}] Basic response generated in ${llmTime}ms (total: ${totalTime}ms)`);
 
       return {
         content: [
