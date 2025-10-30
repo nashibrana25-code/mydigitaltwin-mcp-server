@@ -1,0 +1,344 @@
+{
+  "personal": {
+    "name": "Nashib Rana Magar",
+    "nationality": "Nepalese",
+    "title": "2nd Year Bachelor of IT Student",
+    "location": "Sydney, Australia",
+    "residency_status": "Living in Australia for more than 1 year",
+    "summary": "Motivated 2nd year IT student passionate about software development and problem-solving. Currently building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
+    "elevator_pitch": "Hi, I'm Nashib, a 2nd year IT student at Victoria University. I'm passionate about building software solutions and have hands-on experience with Java, Python, PHP, and SQL through academic projects and personal learning. I'm eager to apply my technical skills in a professional environment and contribute to meaningful projects while continuing to grow as a developer.",
+    "contact": {
+      "email": "nashibrana25@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/nashib-magar-708953329/",
+      "github": "https://github.com/nashibrana25-code",
+      "portfolio": "https://nashibrana.com"
+    }
+  },
+  "salary_location": {
+    "current_salary": "Student - Seeking internship/part-time opportunities",
+    "salary_expectations": "$30-35/hour for internship or $50,000-60,000 AUD for graduate role",
+    "location_preferences": ["Sydney", "Remote", "Hybrid"],
+    "relocation_willing": false,
+    "remote_experience": "Completed group projects remotely using Git, Slack, and Zoom",
+    "travel_availability": "Flexible, can accommodate reasonable travel requirements",
+    "work_authorization": "Student Visa (subclass 500) - 48 hours/fortnight work rights during semester, unlimited during breaks"
+  },
+  "experience": [
+    {
+      "type": "Academic Project",
+      "project_name": "Library Management System (Hogwarts Themed)",
+      "role": "Co-Developer",
+      "duration": "Semester 1, 2025 (3 months)",
+      "context": "Team project for Web Development course - 2-person team",
+      "team_structure": "2-person collaborative team, shared development and design responsibilities",
+      "achievements_star": [
+        {
+          "situation": "Required to build a functional web application for managing library books with an engaging, themed user interface",
+          "task": "Design and develop a full-stack library management system with Hogwarts theme, including book catalog, borrowing system, and user management",
+          "action": "Developed using PHP for backend logic, MySQL for database management, and HTML/CSS/JavaScript for the Hogwarts-themed frontend. Implemented CRUD operations for books, member registration, borrowing/returning functionality, and search features. Designed database schema with proper relationships between books, members, and transactions",
+          "result": "Successfully delivered a fully functional library system with immersive Hogwarts theme. Achieved HD grade, demonstrated strong teamwork and technical skills. Application handled 500+ book records and 100+ user accounts efficiently"
+        },
+        {
+          "situation": "Working with a partner required effective collaboration and code integration",
+          "task": "Coordinate development tasks and maintain code quality",
+          "action": "Used Git for version control, divided work into frontend/backend modules, conducted peer code reviews, and maintained clear communication via regular meetings",
+          "result": "Seamless collaboration with zero major conflicts, both team members contributed equally, delivered project ahead of deadline"
+        }
+      ],
+      "technical_skills_used": ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Bootstrap", "Git", "MVC Architecture"],
+      "key_features": [
+        "Book catalog with search and filter functionality",
+        "User authentication and role-based access (admin/member)",
+        "Borrowing and returning system with due date tracking",
+        "Hogwarts house-themed UI with custom styling",
+        "Transaction history and overdue notifications"
+      ],
+      "leadership_examples": [
+        "Coordinated task distribution with team partner",
+        "Conducted code reviews and quality checks",
+        "Created comprehensive project documentation"
+      ]
+    },
+    {
+      "type": "Academic Project",
+      "project_name": "Cyber Security Lab - Network Security & Threat Detection",
+      "role": "Security Analyst/Developer",
+      "duration": "Semester 2, 2025 (3 months)",
+      "context": "Individual project for Cyber Security course",
+      "team_structure": "Hands-on lab project focusing on network security and intrusion detection",
+      "achievements_star": [
+        {
+          "situation": "Needed to understand cyber attack vectors and implement security measures to protect virtual infrastructure",
+          "task": "Set up virtual machines, simulate various cyber attacks, and implement security tools to detect and prevent intrusions",
+          "action": "Created virtual lab environment using VirtualBox/VMware. Configured multiple VMs to simulate attacker and target machines. Simulated attacks including port scanning, brute force, DDoS, and malware injection. Implemented Wazuh (SIEM/XDR platform) for security monitoring, log analysis, and threat detection. Deployed Snort (IDS/IPS) to detect and prevent network intrusions. Configured security rules, analyzed attack patterns, and documented incident response procedures",
+          "result": "Successfully detected and mitigated 95% of simulated attacks. Gained hands-on experience with enterprise security tools. Received HD grade for comprehensive security implementation and detailed incident reports. Developed strong understanding of security operations and threat hunting"
+        },
+        {
+          "situation": "Complex security tools required extensive learning and troubleshooting",
+          "task": "Master Wazuh and Snort configurations within limited timeframe",
+          "action": "Studied official documentation, followed tutorials, participated in online security communities, and conducted multiple test scenarios to understand tool capabilities",
+          "result": "Successfully configured both tools, created custom detection rules, and demonstrated proficiency in security monitoring and incident response"
+        }
+      ],
+      "technical_skills_used": [
+        "Virtual Machines (VirtualBox/VMware)",
+        "Linux (Ubuntu/Kali)",
+        "Wazuh (Security Monitoring & SIEM)",
+        "Snort (Intrusion Detection/Prevention)",
+        "Network Security Concepts",
+        "Penetration Testing Tools",
+        "Log Analysis",
+        "Incident Response"
+      ],
+      "security_concepts_learned": [
+        "Network intrusion detection and prevention",
+        "SIEM (Security Information and Event Management)",
+        "Log analysis and correlation",
+        "Threat detection and incident response",
+        "Security monitoring and alerting",
+        "Common attack vectors and mitigation strategies",
+        "Security hardening techniques"
+      ]
+    },
+    {
+      "type": "Part-time Work",
+      "company": "Local Club",
+      "title": "Part-time Customer Service",
+      "duration": "2024 - Present",
+      "context": "Working part-time while studying to support living expenses",
+      "transferable_skills": [
+        "Time management: Balancing 20 hours/week work with full-time study",
+        "Communication: Dealing with diverse customers and resolving issues",
+        "Problem-solving: Handling unexpected situations under pressure",
+        "Teamwork: Collaborating with colleagues in fast-paced environment"
+      ]
+    }
+  ],
+  "skills": {
+    "technical": {
+      "programming_languages": [
+        {
+          "language": "Java",
+          "years": 1.5,
+          "proficiency": "Intermediate",
+          "frameworks": ["Spring Boot (learning)"],
+          "concepts": ["OOP", "Data Structures", "Exception Handling", "File I/O", "Collections Framework"]
+        },
+        {
+          "language": "Python",
+          "years": 1,
+          "proficiency": "Intermediate",
+          "frameworks": ["Flask (basic)", "Django (learning)"],
+          "concepts": ["Functions", "Lists/Dictionaries", "File handling", "Basic API development", "Data analysis with Pandas"]
+        },
+        {
+          "language": "PHP",
+          "years": 1,
+          "proficiency": "Intermediate",
+          "frameworks": ["Vanilla PHP", "Laravel (basic)"],
+          "concepts": ["Web forms", "Session management", "MySQL integration", "MVC pattern", "RESTful APIs"]
+        },
+        {
+          "language": "SQL",
+          "years": 1,
+          "proficiency": "Intermediate",
+          "databases": ["MySQL", "PostgreSQL"],
+          "concepts": ["CRUD operations", "Joins", "Subqueries", "Database normalization", "Indexing", "Stored procedures (basic)"]
+        }
+      ],
+      "web_technologies": ["HTML5", "CSS3", "Java", "JSON", "phpMyAdmin"],
+      "tools_platforms": ["Git/GitHub", "VS Code", "IntelliJ IDEA", "phpMyAdmin", "Postman", "Linux basics"],
+      "databases": ["MySQL (1 year)", "PostgreSQL (6 months)", "SQLite (basic)"],
+      "currently_learning": ["React.js", "Node.js", "Docker", "AWS basics", "Data structures & Algorithms"]
+    },
+    "soft_skills": [
+      "Team collaboration",
+      "Problem-solving",
+      "Time management",
+      "Quick learner",
+      "Attention to detail",
+      "Communication",
+      "Adaptability"
+    ],
+    "certifications": [
+      "Oracle Java Foundations (in progress)",
+      "LinkedIn Learning: Python Essential Training (completed)",
+      "Completed various Coursera courses on web development"
+    ]
+  },
+  "education": {
+    "university": "Victoria University",
+    "degree": "Bachelor of Information Technology",
+    "current_year": "2nd Year (Year 2 of 3)",
+    "expected_graduation": "2026",
+    "gpa": "6.0",
+    "major": "Software Development / Information Systems",
+    "relevant_coursework": [
+      "Object-Oriented Programming (Java)",
+      "Web Development (HTML, CSS, PHP, JavaScript)",
+      "Database Systems (SQL, MySQL, PostgreSQL)",
+      "Data Structures and Algorithms",
+      "Software Engineering Principles",
+      "Network Fundamentals",
+      "Introduction to Python Programming",
+      "System Analysis and Design"
+    ],
+    "completed_projects": [
+      "E-commerce website with shopping cart functionality (PHP/MySQL)",
+      "Java-based library management system",
+      "Python data analysis project using Pandas",
+      "Group project: Student attendance system with QR code integration"
+    ],
+    "academic_achievements": [
+      "Dean's List - Semester 2, 2024",
+      "High Distinction in Database Systems",
+      "Top 10% in Object-Oriented Programming course"
+    ]
+  },
+  "projects_portfolio": [
+    {
+      "name": "AI-Powered Digital Twin Workshop Platform",
+      "description": "End-to-end RAG system for interview preparatiand on",
+      "technologies": ["Python", "Upstash Vector", "Groq API", "Next.js"],
+      "impact": "Helped 100+ professionals improve interview performance",
+      "github_url": "https://github.com/username/digital-twin",
+      "live_demo": "https://mydigitaltwin.vercel.app"
+    }
+  ],
+  "career_goals": {
+    "immediate": "Secure a Data Analyst internship or part-time junior developer role to gain industry experience",
+    "short_term": "Graduate with honors, build a strong portfolio, and land a graduate developer position",
+    "long_term": "Become a full-stack developer and eventually progress to senior/lead developer role",
+    "learning_focus": [
+      "Mastering data structures and algorithms",
+      "Building full-stack applications",
+      "Learning modern frameworks (React, Node.js, Spring Boot)",
+      "Understanding cloud technologies (AWS, Docker)",
+      "Improving problem-solving skills through LeetCode/HackerRank"
+    ],
+    "industries_interested": [
+      "Fintech",
+      "E-commerce",
+      "SaaS companies",
+      "Tech startups",
+      "Any company with strong mentorship culture"
+    ],
+    "ideal_role": "Junior Data Analyst, Graduate Developer, Software Engineering Intern, or Business Analyst Intern"
+  },
+  "interview_prep": {
+    "common_questions": {
+      "behavioral": [
+        "Tell me about yourself and why you're studying IT",
+        "Why are you interested in this internship/role?",
+        "Describe a challenging project you worked on and how you overcame difficulties",
+        "Tell me about a time you worked in a team. What was your role?",
+        "How do you manage your time between studying and other commitments?",
+        "What's your biggest achievement in your studies so far?",
+        "Describe a situation where you had to learn something new quickly",
+        "How do you handle constructive criticism or feedback?"
+      ],
+      "technical": [
+        "Explain the difference between Java and Python",
+        "What is Object-Oriented Programming? Can you give examples?",
+        "Explain SQL joins with examples",
+        "What's the difference between GET and POST in HTTP?",
+        "How would you design a simple database for a library system?",
+        "What are some common data structures you've learned? When would you use each?",
+        "Explain the MVC pattern",
+        "What's your process for debugging code?",
+        "Walk me through one of your projects from your GitHub"
+      ],
+      "coding_challenges": [
+        "Write a function to reverse a string",
+        "Find duplicates in an array",
+        "Implement a simple search algorithm",
+        "Write SQL queries to retrieve specific data",
+        "Create a basic CRUD API endpoint"
+      ],
+      "situational": [
+        "You're given a task you don't know how to complete. What do you do?",
+        "How would you approach learning a new programming language or framework?",
+        "If you're stuck on a bug for hours, what would you do?",
+        "How would you prioritize multiple assignments with tight deadlines?",
+        "What would you do if you disagreed with a team member's approach?"
+      ],
+      "company_research": {
+        "research_areas": [
+          "Company products and services",
+          "Company culture and values",
+          "Recent news or achievements",
+          "Technology stack used",
+          "Internship/graduate program structure"
+        ],
+        "preparation_questions": [
+          "What excites you about our company?",
+          "What do you know about what we do?",
+          "Why do you want to work here?",
+          "What questions do you have for us?",
+          "What can you contribute to our team?"
+        ],
+        "questions_to_ask": [
+          "What does a typical day look like for an intern/junior developer?",
+          "What kind of projects would I be working on?",
+          "Is there a mentorship program?",
+          "What technologies does the team use?",
+          "What opportunities are there for learning and growth?",
+          "What's the team structure and who would I be working with?"
+        ]
+      }
+    },
+    "weakness_mitigation": [
+      {
+        "weakness": "Limited professional work experience in software development",
+        "mitigation": "Actively building portfolio with personal projects, strong academic performance, and quick learner with demonstrated ability to pick up new technologies"
+      },
+      {
+        "weakness": "Still developing advanced programming skills",
+        "mitigation": "Consistently practicing on coding platforms, taking online courses, and working on progressively complex projects. Open to feedback and eager to learn from experienced developers"
+      },
+      {
+        "weakness": "No experience with certain enterprise technologies",
+        "mitigation": "Strong foundation in core programming concepts makes it easy to adapt to new tools. Currently learning industry-standard frameworks and actively expanding knowledge"
+      }
+    ],
+    "strengths_to_highlight": [
+      "Strong foundation in multiple programming languages (Java, Python, PHP, SQL)",
+      "Proven ability to learn new technologies quickly",
+      "Good academic performance (Distinction average)",
+      "Experience with both individual and team projects",
+      "Passionate about software development and continuous learning",
+      "Balanced time management between studies and work",
+      "Hands-on experience with full software development lifecycle"
+    ]
+  },
+  "professional_development": {
+    "recent_learning": [
+      "Building web applications with PHP and MySQL",
+      "Object-oriented programming principles in Java",
+      "Python for data analysis and automation",
+      "Git version control and GitHub collaboration",
+      "RESTful API development basics"
+    ],
+    "online_courses": [
+      "LinkedIn Learning: Python Essential Training (Completed)",
+      "Udemy: Complete Web Development Bootcamp (In Progress)",
+      "Coursera: Object-Oriented Programming in Java (Completed)",
+      "FreeCodeCamp: Responsive Web Design (Completed)"
+    ],
+    "extracurricular": [
+      "Attend local tech meetups and student developer events",
+      "Regular contributor to open-source beginner-friendly projects"
+    ],
+    "practice_platforms": [
+      "Intellij IDEA (Java and Python tracks)",
+      "VS Code (Java and Python tracks)",
+      "CodeWars (improving problem-solving skills)",
+      "GitHub (maintaining personal project portfolio)"
+    ],
+    "reading_resources": [
+      "Following tech blogs and Medium articles",
+      "Reading 'Clean Code' by Robert Martin",
+      "Tech YouTube channels for tutorials and best practices"
+    ]
+  }
+}
