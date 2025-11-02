@@ -1,12 +1,14 @@
 {
   "personal": {
-    "name": "Nashib Rana Magar",
+    "Full Name": "Nashib Rana Magar",
     "nationality": "Nepalese",
+    "Age": 20,
     "title": "2nd Year Bachelor of IT Student",
     "location": "Sydney, Australia",
-    "residency_status": "Living in Australia for more than 1 year",
-    "summary": "Motivated 2nd year IT student passionate about software development and problem-solving. Currently building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
-    "elevator_pitch": "Hi, I'm Nashib, a 2nd year IT student at Victoria University. I'm passionate about building software solutions and have hands-on experience with Java, Python, PHP, and SQL through academic projects and personal learning. I'm eager to apply my technical skills in a professional environment and contribute to meaningful projects while continuing to grow as a developer.",
+    "residency_status": "International student residing in Australia for over 1 year (since 2024)",
+    "cultural_background": "Nepalese background with strong adaptation to Australian professional culture",
+    "summary": "Motivated 2nd year IT student of Nepalese background, residing in Sydney, Australia. Passionate about software development and problem-solving with over a year of experience adapting to Australian academic and professional environments. Building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
+    "elevator_pitch": "Hi, I'm Nashib, a Nepalese student pursuing my 2nd year in IT at Victoria University in Sydney. I've been living in Australia for over a year, gaining valuable cross-cultural experience while building my technical skills. I'm passionate about creating software solutions and have hands-on experience with Java, Python, PHP, and SQL through academic projects and personal learning. I bring both technical expertise and a unique international perspective, and I'm eager to contribute to meaningful projects in a professional environment while continuing to grow as a developer.",
     "contact": {
       "email": "nashibrana25@gmail.com",
       "linkedin": "https://www.linkedin.com/in/nashib-magar-708953329/",
@@ -21,7 +23,14 @@
     "relocation_willing": false,
     "remote_experience": "Completed group projects remotely using Git, Slack, and Zoom",
     "travel_availability": "Flexible, can accommodate reasonable travel requirements",
-    "work_authorization": "Student Visa (subclass 500) - 48 hours/fortnight work rights during semester, unlimited during breaks"
+    "work_authorization": "International student from Nepal on Student Visa (subclass 500) - 48 hours/fortnight work rights during semester, unlimited during breaks. Residing in Australia since 2024 (over 1 year)",
+    "visa_details": {
+      "type": "Student Visa (subclass 500)",
+      "origin_country": "Nepal",
+      "time_in_australia": "Over 1 year (since 2024)",
+      "work_limitations": "48 hours per fortnight during semester, unlimited hours during university breaks",
+      "eligibility_notes": "Eligible for casual, part-time internships and graduate programs that accept international students"
+    }
   },
   "experience": [
     {
