@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "digital-twin": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\nashi\\Week 5\\digital-twin-mcp\\start-server.js"
+      ]
+    }
+  }
+}
