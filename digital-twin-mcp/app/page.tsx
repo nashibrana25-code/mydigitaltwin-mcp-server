@@ -176,30 +176,31 @@ export default function Home() {
               </button>
             </div>
           </form>
-        </div>
+          </div>
 
-        {/* Info Sidebar - Takes 1 column */}
-        <div className="space-y-4">
-          <div className="border border-gray-800 rounded-lg p-4 bg-zinc-950 sticky top-4">
-            <h3 className="font-semibold mb-3 text-white">🔌 Claude Desktop Integration</h3>
-            <p className="text-gray-500 text-xs mb-2">Add to your MCP settings:</p>
-            <pre className="bg-black border border-gray-800 p-2 rounded text-xs overflow-x-auto text-gray-400">
+          {/* Info Sidebar - Takes 1 column */}
+          <div className="space-y-4">
+            <div className="border border-gray-800 rounded-lg p-4 bg-zinc-950 sticky top-4">
+              <h3 className="font-semibold mb-3 text-white">🔌 Claude Desktop Integration</h3>
+              <p className="text-gray-500 text-xs mb-2">Add to your MCP settings:</p>
+              <pre className="bg-black border border-gray-800 p-2 rounded text-xs overflow-x-auto text-gray-400">
 {`"digital-twin": {
   "command": "npx",
   "args": ["-y", "mcp-remote",
     "https://mydigitaltwin-mcp-server.vercel.app/api/mcp"]
 }`}
-            </pre>
-          </div>
+              </pre>
+            </div>
 
-          <div className="border border-gray-800 rounded-lg p-4 bg-zinc-950">
-            <h3 className="font-semibold mb-3 text-white">⚡ Powered By</h3>
-            <ul className="space-y-2 text-xs text-gray-400">
-              <li>✓ <strong className="text-white">Vector DB:</strong> Upstash Vector (RAG)</li>
-              <li>✓ <strong className="text-white">LLM:</strong> Groq (llama-3.1-8b-instant)</li>
-              <li>✓ <strong className="text-white">Protocol:</strong> Model Context Protocol</li>
-              <li>✓ <strong className="text-white">Framework:</strong> Next.js 15</li>
-            </ul>
+            <div className="border border-gray-800 rounded-lg p-4 bg-zinc-950">
+              <h3 className="font-semibold mb-3 text-white">⚡ Powered By</h3>
+              <ul className="space-y-2 text-xs text-gray-400">
+                <li>✓ <strong className="text-white">Vector DB:</strong> Upstash Vector (RAG)</li>
+                <li>✓ <strong className="text-white">LLM:</strong> Groq (llama-3.1-8b-instant)</li>
+                <li>✓ <strong className="text-white">Protocol:</strong> Model Context Protocol</li>
+                <li>✓ <strong className="text-white">Framework:</strong> Next.js 15</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
