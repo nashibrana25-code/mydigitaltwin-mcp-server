@@ -95,8 +95,15 @@ export async function POST(request: Request) {
           // Extract context
           const context = results
             .map((result) => {
-              const metadata = result.metadata as { text?: string; section?: string };
-              return `[${metadata.section || 'Profile'}]\n${metadata.text || ''}`;
+              const metadata = result.metadata as { 
+                title?: string; 
+                content?: string; 
+                type?: string;
+                category?: string;
+              };
+              const title = metadata.title || 'Profile Section';
+              const content = metadata.content || '';
+              return `[${title}]\n${content}`;
             })
             .join('\n\n');
 
@@ -163,8 +170,13 @@ export async function POST(request: Request) {
 
           const formattedResults = results
             .map((result, index) => {
-              const metadata = result.metadata as { text?: string; section?: string };
-              return `Result ${index + 1} (relevance: ${(result.score * 100).toFixed(1)}%):\nSection: ${metadata.section || 'Unknown'}\n${metadata.text || 'No text available'}`;
+              const metadata = result.metadata as { 
+                title?: string; 
+                content?: string; 
+                type?: string;
+                category?: string;
+              };
+              return `Result ${index + 1} (relevance: ${(result.score * 100).toFixed(1)}%):\nTitle: ${metadata.title || 'Unknown'}\nType: ${metadata.type || 'N/A'}\n${metadata.content || 'No content available'}`;
             })
             .join('\n\n---\n\n');
 
