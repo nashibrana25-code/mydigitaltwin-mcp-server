@@ -30,15 +30,23 @@ export async function queryVectors(
   topK: number = 3
 ): Promise<VectorQueryResult[]> {
   try {
+    console.log(`[Vector] Querying with: "${query.substring(0, 50)}..." (topK=${topK})`);
+    
     const results = await vectorIndex.query({
       data: query,
       topK,
       includeMetadata: true,
     });
 
+    console.log(`[Vector] Found ${results.length} results`);
+    
+    if (results.length > 0) {
+      console.log(`[Vector] First result score: ${results[0].score}, metadata:`, results[0].metadata);
+    }
+
     return results as VectorQueryResult[];
   } catch (error) {
-    console.error("Error querying vectors:", error);
+    console.error("[Vector] Error querying vectors:", error);
     throw new Error("Failed to query vector database");
   }
 }

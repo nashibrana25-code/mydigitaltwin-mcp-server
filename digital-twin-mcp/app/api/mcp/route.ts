@@ -57,12 +57,16 @@ export async function POST(request: Request) {
         if (name === 'query_digital_twin') {
           const { question } = args as { question: string };
 
+          console.log('[MCP] Received question:', question);
+
           if (!question || typeof question !== 'string') {
             throw new Error('Invalid question parameter');
           }
 
           // Search vector database
+          console.log('[MCP] Querying vector database...');
           const results = await queryVectors(question, 5);
+          console.log('[MCP] Vector results:', results?.length || 0);
 
           if (!results || results.length === 0) {
             return new Response(
