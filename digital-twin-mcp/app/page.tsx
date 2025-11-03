@@ -172,6 +172,8 @@ export default function Home() {
                 disabled={isLoading || !input.trim()}
                 className="px-4 sm:px-6 py-2 sm:py-3 bg-white text-black rounded-lg font-medium hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm sm:text-base whitespace-nowrap"
               >
+                {isLoading ? 'Sending...' : 'Send'}
+              </button>
             </div>
           </form>
         </div>
