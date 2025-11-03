@@ -96,7 +96,10 @@ Be concise, professional, and helpful. If the context doesn't contain enough inf
 
       const userPrompt = `Context from profile:\n\n${context}\n\nQuestion: ${question}\n\nProvide a clear, professional answer based on the context above.`;
 
-      const response = await generateResponse(systemPrompt, userPrompt);
+      const response = await generateResponse({
+        prompt: userPrompt,
+        systemPrompt: systemPrompt,
+      });
 
       return {
         content: [
