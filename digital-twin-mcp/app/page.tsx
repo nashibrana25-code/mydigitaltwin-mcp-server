@@ -98,7 +98,7 @@ export default function Home() {
           {/* Chat Interface - Takes 2 columns */}
           <div className="lg:col-span-2 border border-gray-800 rounded-lg bg-zinc-950 shadow-2xl">
             {/* Messages Area */}
-            <div className="h-[400px] sm:h-[500px] overflow-y-auto p-4 sm:p-6 space-y-4">
+            <div className="h-[350px] sm:h-[400px] overflow-y-auto p-4 sm:p-6 space-y-4">
             {messages.length === 0 ? (
               <div className="h-full flex flex-col items-center justify-center text-center text-gray-500">
                 <div className="text-6xl mb-4">💬</div>
