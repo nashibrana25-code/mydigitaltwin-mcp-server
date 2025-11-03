@@ -1,0 +1,70 @@
+{
+  "endpoint": "https://mydigitaltwin-mcp-server.vercel.app/api/mcp",
+  "categories": [
+    {
+      "name": "technical_skills",
+      "questions": [
+        "What programming languages are you most comfortable with?",
+        "How would you rate your proficiency in PHP, Java, Python, and JavaScript?",
+        "Describe your experience with SQL and database design.",
+        "Which web frameworks have you used and in what context?",
+        "Do you have experience with version control and Git workflows?"
+      ]
+    },
+    {
+      "name": "leadership_collaboration",
+      "questions": [
+        "Tell me about a team project you worked on and your role.",
+        "How do you handle disagreements or conflicts in a team?",
+        "Give an example of how you mentored or helped a teammate.",
+        "Describe your collaboration with non-technical stakeholders."
+      ]
+    },
+    {
+      "name": "problem_solving",
+      "questions": [
+        "Describe a challenging technical problem you solved.",
+        "How do you approach debugging complex issues?",
+        "What steps do you take to ensure code quality and reliability?"
+      ]
+    },
+    {
+      "name": "career_progression",
+      "questions": [
+        "How have you grown professionally over the past year?",
+        "What are your short-term and long-term career goals?",
+        "What skills are you currently working to improve?"
+      ]
+    },
+    {
+      "name": "industry_knowledge",
+      "questions": [
+        "What is your understanding of cybersecurity practices you've studied?",
+        "How do you stay current with trends in software development?"
+      ]
+    },
+    {
+      "name": "cultural_fit",
+      "questions": [
+        "How would you describe your working style and values?",
+        "What environment do you perform best in?"
+      ]
+    },
+    {
+      "name": "achievement_quantification",
+      "questions": [
+        "What measurable impact did your Library Management System project have?",
+        "Share a time when you improved performance or efficiency with metrics.",
+        "What are your biggest achievements so far and how do you quantify them?"
+      ]
+    },
+    {
+      "name": "profile_facts",
+      "questions": [
+        "What is your full name?",
+        "How old are you?",
+        "Where are you currently based and what is your work authorization status?"
+      ]
+    }
+  ]
+}
