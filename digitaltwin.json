@@ -1,13 +1,16 @@
 {
   "personal": {
+    "Name" : "Nashib",
     "Full Name": "Nashib Rana Magar",
     "nationality": "Nepalese",
+    "gender": "Male",
+    "date_of_birth": "2005-11-01",
     "Age": 20,
     "title": "2nd Year Bachelor of IT Student",
     "location": "Sydney, Australia",
     "residency_status": "International student residing in Australia for over 1 year (since 2024)",
     "cultural_background": "Nepalese background with strong adaptation to Australian professional culture",
-    "summary": "Motivated 2nd year IT student of Nepalese background, residing in Sydney, Australia. Passionate about software development and problem-solving with over a year of experience adapting to Australian academic and professional environments. Building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
+    "summary": "I'm a 20-year-old motivated 2nd year IT student of Nepalese background, residing in Sydney, Australia. Passionate about software development and problem-solving with over a year of experience adapting to Australian academic and professional environments. Building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
     "elevator_pitch": "Hi, I'm Nashib, a Nepalese student pursuing my 2nd year in IT at Victoria University in Sydney. I've been living in Australia for over a year, gaining valuable cross-cultural experience while building my technical skills. I'm passionate about creating software solutions and have hands-on experience with Java, Python, PHP, and SQL through academic projects and personal learning. I bring both technical expertise and a unique international perspective, and I'm eager to contribute to meaningful projects in a professional environment while continuing to grow as a developer.",
     "contact": {
       "email": "nashibrana25@gmail.com",

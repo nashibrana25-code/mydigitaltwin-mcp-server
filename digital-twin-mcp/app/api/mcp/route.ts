@@ -7,6 +7,32 @@ export async function POST(request: Request) {
     const body = await request.json();
     
     // Handle MCP JSON-RPC format
+    if (body.method === 'initialize') {
+      return new Response(
+        JSON.stringify({
+          jsonrpc: '2.0',
+          id: body.id,
+          result: {
+            protocolVersion: '2024-11-05',
+            capabilities: {
+              tools: {},
+            },
+            serverInfo: {
+              name: 'digital-twin-mcp',
+              version: '1.0.0',
+            },
+          },
+        }),
+        {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
+      );
+    }
+    
     if (body.method === 'tools/list') {
       return new Response(
         JSON.stringify({
