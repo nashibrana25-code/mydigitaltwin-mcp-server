@@ -1,0 +1,62 @@
+# Prometheus configuration for Digital Twin MCP Server
+# 100% FREE - Prometheus is open-source
+
+global:
+  scrape_interval: 15s # Scrape targets every 15 seconds
+  evaluation_interval: 15s # Evaluate rules every 15 seconds
+  external_labels:
+    monitor: 'digital-twin-mcp'
+    environment: 'development'
+
+# Alertmanager configuration (optional)
+# alerting:
+#   alertmanagers:
+#     - static_configs:
+#         - targets: ['alertmanager:9093']
+
+# Load rules once and periodically evaluate them
+rule_files:
+  # - "alerts/*.yml"
+
+# Scrape configurations
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          service: 'prometheus'
+
+  # MCP Server metrics (disabled - app deployed on Vercel)
+  # Vercel doesn't expose /metrics endpoint publicly
+  # Alternative: Use Vercel Analytics or custom logging
+  # - job_name: 'mcp-server'
+  #   static_configs:
+  #     - targets: ['mydigitaltwin-mcp-server.vercel.app:443']
+  #       labels:
+  #         service: 'digital-twin-mcp'
+  #         component: 'api'
+  #   metrics_path: '/api/metrics'
+  #   scrape_interval: 10s
+  #   scheme: https
+
+  # PostgreSQL metrics (if pg_exporter added)
+  # - job_name: 'postgres'
+  #   static_configs:
+  #     - targets: ['postgres-exporter:9187']
+  #       labels:
+  #         service: 'postgres'
+
+  # Redis metrics (if redis_exporter added)
+  # - job_name: 'redis'
+  #   static_configs:
+  #     - targets: ['redis-exporter:9121']
+  #       labels:
+  #         service: 'redis'
+
+  # Node exporter for system metrics (if added)
+  # - job_name: 'node'
+  #   static_configs:
+  #     - targets: ['node-exporter:9100']
+  #       labels:
+  #         service: 'node'

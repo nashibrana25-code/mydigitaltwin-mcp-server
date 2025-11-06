@@ -1,0 +1,126 @@
+# Docker Compose for local development
+# 100% FREE - All services run locally with open-source software
+
+version: '3.8'
+
+services:
+  # Note: MCP Server is deployed on Vercel
+  # URL: https://mydigitaltwin-mcp-server.vercel.app
+  # This stack provides enterprise monitoring/caching for the Vercel deployment
+
+  # Redis - FREE caching layer
+  redis:
+    image: redis:7-alpine
+    container_name: digitaltwin-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - digitaltwin-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # PostgreSQL - FREE audit log database
+  postgres:
+    image: postgres:16-alpine
+    container_name: digitaltwin-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=digitaltwin
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - digitaltwin-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Prometheus - FREE metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: digitaltwin-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=30d'
+      - '--storage.tsdb.retention.size=10GB'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - digitaltwin-network
+    restart: unless-stopped
+
+  # Grafana - FREE visualization dashboards
+  grafana:
+    image: grafana/grafana:latest
+    container_name: digitaltwin-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./docker/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./docker/grafana/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - digitaltwin-network
+    restart: unless-stopped
+
+  # Nginx - FREE reverse proxy to Vercel deployment
+  nginx:
+    image: nginx:alpine
+    container_name: digitaltwin-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/ssl:/etc/nginx/ssl:ro
+    environment:
+      - VERCEL_URL=mydigitaltwin-mcp-server.vercel.app
+    networks:
+      - digitaltwin-network
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+    driver: local
+  postgres-data:
+    driver: local
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+
+networks:
+  digitaltwin-network:
+    driver: bridge
+
+# Usage:
+# Development: docker-compose up
+# Production: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# Stop: docker-compose down
+# Clean: docker-compose down -v (removes volumes)

@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Next.js
+.next
+out
+dist
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# Testing
+coverage
+.nyc_output
+
+# Development
+.vscode
+.idea
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+docs
+enterprise-architecture
+
+# Python virtual env (if present)
+.venv
+__pycache__
+*.pyc
