@@ -96,6 +96,30 @@ def flatten_profile_to_chunks(profile: Dict) -> List[Tuple[str, str, Dict]]:
             "overview",
             ["pitch", "introduction"]
         )
+        
+        # Add personal details chunk
+        personal_details = []
+        if p.get('marital_status'):
+            personal_details.append(f"Marital Status: {p['marital_status']}")
+        if p.get('relationship_status'):
+            personal_details.append(f"Relationship Status: {p['relationship_status']}")
+        if p.get('nationality'):
+            personal_details.append(f"Nationality: {p['nationality']}")
+        if p.get('Age'):
+            personal_details.append(f"Age: {p['Age']}")
+        if p.get('gender'):
+            personal_details.append(f"Gender: {p['gender']}")
+        if p.get('location'):
+            personal_details.append(f"Location: {p['location']}")
+        
+        if personal_details:
+            add_chunk(
+                "Personal Details",
+                ". ".join(personal_details),
+                "personal",
+                "details",
+                ["personal", "demographics", "marital", "status"]
+            )
     
     # Work Experience
     if 'experience' in profile:
@@ -171,6 +195,55 @@ def flatten_profile_to_chunks(profile: Dict) -> List[Tuple[str, str, Dict]]:
                 "academic",
                 ["coursework", "education"]
             )
+        
+        # Additional Qualifications (inside education)
+        if 'additional_qualifications' in edu:
+            for qual in edu['additional_qualifications']:
+                qual_text = f"{qual.get('qualification', '')} from {qual.get('institution', '')}. Certified by {qual.get('certification_body', '')}. Skills: {', '.join(qual.get('skills_gained', []))}. {qual.get('relevance', '')}"
+                add_chunk(
+                    f"Qualification: {qual.get('qualification', '')}",
+                    qual_text,
+                    "qualification",
+                    "education",
+                    ["qualification", "certification", "diploma"]
+                )
+        
+        # Certifications and Accomplishments (inside education)
+        if 'certifications_and_accomplishments' in edu:
+            for cert in edu['certifications_and_accomplishments']:
+                cert_type = cert.get('type', 'Accomplishment')
+                cert_name = cert.get('name', cert.get('qualification', 'Unknown'))
+                
+                if cert_type == "Technical Project":
+                    # Detailed project accomplishment
+                    project_text = f"{cert_name} ({cert.get('date_completed', '')}). Technologies: {', '.join(cert.get('technologies', []))}. Achievements: {'. '.join(cert.get('achievements', []))}. Business impact: {cert.get('business_impact', '')}. Key metrics: {str(cert.get('key_metrics', {}))}"
+                    add_chunk(
+                        f"Technical Project: {cert_name}",
+                        project_text,
+                        "accomplishment",
+                        "projects",
+                        ["project", "accomplishment", "docker", "devops"] + [tech.lower() for tech in cert.get('technologies', [])]
+                    )
+                elif cert_type in ["Technical Certification", "Online Learning"]:
+                    # Certification details
+                    cert_text = f"{cert_name} from {cert.get('issuer', '')} ({cert.get('date_completed', '')}). Skills: {', '.join(cert.get('skills', []))}"
+                    add_chunk(
+                        f"Certification: {cert_name}",
+                        cert_text,
+                        "certification",
+                        "education",
+                        ["certification", "learning", cert.get('issuer', '').lower()]
+                    )
+                elif cert_type == "Academic Achievement":
+                    # Academic honors
+                    achievement_text = f"{cert_name} at {cert.get('institution', '')} ({cert.get('date_awarded', '')}). {cert.get('criteria', '')}"
+                    add_chunk(
+                        f"Achievement: {cert_name}",
+                        achievement_text,
+                        "achievement",
+                        "academic",
+                        ["achievement", "academic", "honor"]
+                    )
     
     # Career Goals
     if 'career_goals' in profile:

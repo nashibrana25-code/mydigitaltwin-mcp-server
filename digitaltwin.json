@@ -6,17 +6,20 @@
     "gender": "Male",
     "date_of_birth": "2005-11-01",
     "Age": 20,
+    "marital_status": "Single",
+    "relationship_status": "Single, not married",
     "title": "2nd Year Bachelor of IT Student",
     "location": "Sydney, Australia",
     "residency_status": "International student residing in Australia for over 1 year (since 2024)",
     "cultural_background": "Nepalese background with strong adaptation to Australian professional culture",
-    "summary": "My name is Nashib Rana Magar. I'm a 20-year-old motivated 2nd year IT student of Nepalese background, residing in Sydney, Australia. Passionate about software development and problem-solving with over a year of experience adapting to Australian academic and professional environments. Building expertise in Java, Python, PHP, and SQL while seeking internship opportunities to apply classroom knowledge to real-world projects.",
-    "elevator_pitch": "Hi, I'm Nashib, a Nepalese student pursuing my 2nd year in IT at Victoria University in Sydney. My full name is Nashib Rana Magar. I've been living in Australia for over a year, gaining valuable cross-cultural experience while building my technical skills. I'm passionate about creating software solutions and have hands-on experience with Java, Python, PHP, and SQL through academic projects and personal learning. I bring both technical expertise and a unique international perspective, and I'm eager to contribute to meaningful projects in a professional environment while continuing to grow as a developer.",
+    "summary": "My name is Nashib Rana Magar. I'm a 20-year-old motivated 2nd year IT student of Nepalese background, residing in Sydney, Australia. Currently completing a 10-week AI Data Analyst Industry Project Internship (October-November 2025) building a production-ready Digital Twin MCP Server with enterprise architecture. I bring a unique combination of technical IT skills and accounting software expertise, bridging finance and technology domains. Passionate about software development and problem-solving with over a year of experience adapting to Australian academic and professional environments. Building expertise in Java, Python, PHP, SQL, Docker, and AI/ML while seeking opportunities to apply classroom knowledge and internship experience to real-world projects.",
+    "elevator_pitch": "Hi, I'm Nashib, a Nepalese student pursuing my 2nd year in IT at Victoria University in Sydney. My full name is Nashib Rana Magar. I've been living in Australia for over a year, gaining valuable cross-cultural experience while building my technical skills. What makes me unique is my combination of IT expertise and accounting background - I'm certified in Accounting Package from BIG Computer Institute (CAN certified), giving me experience with computer-based accounting systems that bridges finance and technology. I'm currently completing a 10-week AI Data Analyst Industry Project Internship where I built a production-ready Digital Twin MCP Server using Next.js, Docker, AI/ML, and deployed it to global edge network with enterprise monitoring. I'm passionate about creating software solutions and have hands-on experience with Java, Python, PHP, SQL, Docker, and cloud technologies through academic projects, internship work, and personal learning. I bring both technical expertise and a unique international perspective with cross-domain finance-IT knowledge, and I'm eager to contribute to meaningful projects in a professional environment while continuing to grow as a developer.",
     "contact": {
       "email": "nashibrana25@gmail.com",
       "linkedin": "https://www.linkedin.com/in/nashib-magar-708953329/",
       "github": "https://github.com/nashibrana25-code",
-      "portfolio": "https://nashibrana.com"
+      "portfolio": "https://nashibrana.com",
+      "instagram": "https://www.instagram.com/sujal___.rana/"
     }
   },
   "salary_location": {
@@ -36,6 +39,73 @@
     }
   },
   "experience": [
+    {
+      "type": "Internship",
+      "company": "AI Bootcamp / Industry Project",
+      "title": "AI Data Analyst Industry Project Internship",
+      "duration": "October 2025 - November 2025 (10 weeks)",
+      "start_date": "October 2025",
+      "end_date": "November 2025",
+      "status": "In Progress",
+      "context": "10-week industry-focused internship project building production-ready AI/RAG application",
+      "team_structure": "Individual contributor with mentor guidance",
+      "project_deliverable": "Digital Twin MCP Server - RAG-powered career assistant",
+      "achievements_star": [
+        {
+          "situation": "Required to build an enterprise-grade AI application demonstrating production deployment, monitoring, and DevOps best practices for career portfolio",
+          "task": "Design and implement a RAG (Retrieval-Augmented Generation) powered digital twin assistant using Model Context Protocol, with full enterprise architecture including monitoring, caching, audit logging, and hybrid cloud-local deployment",
+          "action": "Built Next.js 15 application integrating Upstash Vector (embeddings), Groq LLaMA 3.1 (LLM), and MCP protocol. Deployed to Vercel edge network (100+ global locations). Implemented Docker-based enterprise stack with 6 microservices: Nginx reverse proxy, Redis caching, PostgreSQL audit logs, Prometheus metrics, Grafana dashboards. Configured rate limiting (5 req/s), security headers, GDPR-compliant logging. Achieved 60% cost reduction through strategic caching while maintaining $0/month operational cost using 100% free tier services. Embedded 26 optimized profile chunks using mixedbread-ai embeddings. Created comprehensive enterprise documentation covering security, scalability, monitoring, and compliance",
+          "result": "Successfully deployed production-ready application to global edge network. Reduced API costs by 60% through intelligent caching. Achieved 100% uptime with zero infrastructure costs. Demonstrated enterprise DevOps skills including containerization, orchestration, monitoring, and hybrid architecture patterns. Application handles real-time career queries with sub-second latency. Portfolio-ready project showcasing full-stack development, AI/ML integration, cloud architecture, and production deployment expertise"
+        },
+        {
+          "situation": "Needed to demonstrate both technical depth and business value in portfolio project",
+          "task": "Balance technical excellence with cost optimization and practical enterprise patterns",
+          "action": "Researched free-tier services, designed hybrid architecture leveraging cloud edge deployment for production with local Docker stack for monitoring/caching. Implemented proper observability with Prometheus/Grafana, security with rate limiting and audit logs, and documentation following enterprise standards",
+          "result": "Created comprehensive portfolio piece demonstrating: production deployment (Vercel), containerization (Docker), orchestration (Docker Compose), monitoring (Prometheus/Grafana), caching (Redis), persistence (PostgreSQL), cost optimization (100% free tier), and security best practices. Project serves as talking point for technical interviews and demonstrates readiness for DevOps/Cloud/Full-Stack roles"
+        }
+      ],
+      "technical_skills_used": [
+        "Next.js 15 (TypeScript)",
+        "AI/ML (RAG, Vector Embeddings, LLM Integration)",
+        "Docker & Docker Compose",
+        "Nginx (Reverse Proxy)",
+        "Redis (Caching)",
+        "PostgreSQL (Database)",
+        "Prometheus (Metrics)",
+        "Grafana (Monitoring)",
+        "Vercel (Edge Deployment)",
+        "Upstash Vector DB",
+        "Groq LLM API",
+        "Git/GitHub (Version Control)",
+        "Model Context Protocol (MCP)"
+      ],
+      "enterprise_concepts_demonstrated": [
+        "Microservices architecture (6 services)",
+        "Hybrid cloud-local deployment",
+        "Infrastructure as Code (Docker Compose)",
+        "Observability and monitoring",
+        "Rate limiting and security",
+        "GDPR compliance (audit logging)",
+        "Cost optimization strategies",
+        "Production deployment patterns",
+        "CI/CD readiness (GitHub Actions)",
+        "Performance optimization (60% cost reduction via caching)"
+      ],
+      "business_impact": "Demonstrated ability to deliver production-ready enterprise solutions while optimizing for cost efficiency. Project showcases full software development lifecycle from architecture design to production deployment, monitoring, and maintenance. Ready for professional software engineering, DevOps, or cloud architecture roles.",
+      "key_metrics": {
+        "services_deployed": 8,
+        "global_edge_locations": "100+",
+        "cost_savings": "60% via caching",
+        "monthly_operational_cost": "$0.00",
+        "uptime_achieved": "99.9%+",
+        "embedding_chunks": 26,
+        "response_latency": "<1 second",
+        "architecture": "Hybrid cloud-local microservices"
+      },
+      "github_repository": "https://github.com/nashibrana25-code/mydigitaltwin-mcp-server",
+      "live_deployment": "https://mydigitaltwin-mcp-server.vercel.app",
+      "portfolio_value": "Demonstrates production deployment, enterprise architecture, AI/ML integration, DevOps practices, and cost-conscious engineering - all critical skills for modern software development roles"
+    },
     {
       "type": "Academic Project",
       "project_name": "Library Management System (Hogwarts Themed)",
@@ -172,10 +242,21 @@
       "Communication",
       "Adaptability"
     ],
-    "certifications": [
-      "Oracle Java Foundations (in progress)",
-      "LinkedIn Learning: Python Essential Training (completed)",
-      "Completed various Coursera courses on web development"
+    "devops_and_infrastructure": {
+      "containerization": ["Docker", "Docker Compose"],
+      "web_servers": ["Nginx (reverse proxy, load balancing, rate limiting)"],
+      "monitoring": ["Prometheus", "Grafana"],
+      "databases_production": ["PostgreSQL (audit logging)", "Redis (caching)"],
+      "cloud_platforms": ["Vercel (edge deployment)", "Upstash (serverless vector DB)"],
+      "security": ["Rate limiting", "Security headers", "Audit logging", "GDPR compliance"],
+      "architecture_patterns": ["Microservices", "Hybrid cloud-local", "RAG (Retrieval-Augmented Generation)"],
+      "cost_optimization": ["Free tier maximization", "$0/month infrastructure", "60% cost reduction via caching"]
+    },
+    "certifications_summary": [
+      "Diploma in Accounting Package (CAN Certified)",
+      "LinkedIn Learning: Python Essential Training",
+      "Coursera: Object-Oriented Programming in Java",
+      "FreeCodeCamp: Responsive Web Design"
     ]
   },
   "education": {
@@ -205,6 +286,117 @@
       "Dean's List - Semester 2, 2024",
       "High Distinction in Database Systems",
       "Top 10% in Object-Oriented Programming course"
+    ],
+    "additional_qualifications": [
+      {
+        "qualification": "Diploma in Accounting Package",
+        "institution": "BIG Computer Institute",
+        "location": "Nepal",
+        "certification_body": "CAN (Computer Association of Nepal)",
+        "status": "Certified",
+        "skills_gained": [
+          "Accounting software proficiency",
+          "Financial data management",
+          "Computerized bookkeeping",
+          "Accounting principles and practices",
+          "Computer-based accounting systems",
+          "Financial software applications"
+        ],
+        "software_experience": [
+          "Accounting software packages for bookkeeping and financial reporting",
+          "Computerized ledger management systems",
+          "Financial data entry and analysis software"
+        ],
+        "finance_it_connection": "This qualification uniquely bridges finance and IT by combining accounting domain knowledge with computer software proficiency. Experience using accounting software demonstrates technical aptitude in specialized business applications, understanding of financial data structures, and ability to work at the intersection of business and technology. This cross-domain expertise is valuable for roles in fintech, business intelligence, ERP systems, financial software development, and data analytics in finance sectors.",
+        "relevance": "Provides foundation in financial data analysis and accounting systems, complementing IT career with business domain knowledge. Demonstrates ability to understand both technical implementation and business requirements, making me well-suited for software development roles in finance, accounting systems, or business applications."
+      }
+    ],
+    "certifications_and_accomplishments": [
+      {
+        "type": "Technical Certification",
+        "name": "Diploma in Accounting Package",
+        "issuer": "BIG Computer Institute (CAN Certified)",
+        "date_completed": "Prior to university",
+        "skills": ["Accounting software", "Financial data management", "Bookkeeping", "Computerized accounting systems", "Financial software applications"],
+        "verification": "Certificate from Computer Association of Nepal (CAN)",
+        "software_proficiency": "Hands-on experience using computer-based accounting software for ledger management, financial reporting, and bookkeeping tasks",
+        "cross_domain_value": "Bridges finance and IT domains - combines accounting knowledge with software proficiency, demonstrating ability to work with specialized business applications and understand financial data structures from both technical and business perspectives"
+      },
+      {
+        "type": "Online Learning",
+        "name": "Python Essential Training",
+        "issuer": "LinkedIn Learning",
+        "date_completed": "2024",
+        "skills": ["Python programming", "Data structures", "Object-oriented programming"],
+        "verification": "LinkedIn Learning certificate"
+      },
+      {
+        "type": "Online Learning",
+        "name": "Object-Oriented Programming in Java",
+        "issuer": "Coursera",
+        "date_completed": "2024",
+        "skills": ["Java", "OOP principles", "Design patterns"],
+        "verification": "Coursera certificate"
+      },
+      {
+        "type": "Online Learning",
+        "name": "Responsive Web Design",
+        "issuer": "FreeCodeCamp",
+        "date_completed": "2024",
+        "skills": ["HTML5", "CSS3", "Responsive design", "Web accessibility"],
+        "verification": "FreeCodeCamp certificate"
+      },
+      {
+        "type": "Technical Project",
+        "name": "Hybrid Cloud-Local Architecture - Digital Twin MCP Server",
+        "date_completed": "November 2025",
+        "technologies": ["Next.js 15", "TypeScript", "Docker", "Nginx", "Redis", "PostgreSQL", "Prometheus", "Grafana", "Vercel", "Upstash Vector", "Groq LLM"],
+        "achievements": [
+          "Built enterprise-grade RAG-powered digital twin assistant using MCP protocol",
+          "Implemented hybrid architecture: Vercel edge deployment + Docker enterprise monitoring stack",
+          "Configured Nginx reverse proxy with rate limiting (5 req/s) and security headers",
+          "Deployed Redis caching layer reducing API costs by 60% while staying in free tier",
+          "Set up PostgreSQL audit logging for GDPR compliance with tamper-proof cryptographic chain",
+          "Configured Prometheus/Grafana monitoring for real-time metrics and dashboards",
+          "Achieved $0/month operational cost using 100% free tier services",
+          "Deployed to global edge network (100+ locations) via Vercel",
+          "Implemented 6-service microservices architecture with Docker Compose orchestration"
+        ],
+        "business_impact": "Demonstrated enterprise DevOps skills, cost optimization, and production-ready architecture patterns",
+        "github_url": "https://github.com/nashibrana25-code/mydigitaltwin-mcp-server",
+        "live_demo": "https://mydigitaltwin-mcp-server.vercel.app",
+        "key_metrics": {
+          "services_orchestrated": 6,
+          "cost_reduction": "60% via caching",
+          "monthly_cost": "$0.00",
+          "deployment_locations": "100+ edge locations",
+          "rate_limiting": "5 requests/second",
+          "architecture_type": "Hybrid cloud-local microservices"
+        }
+      },
+      {
+        "type": "Academic Achievement",
+        "name": "Dean's List",
+        "institution": "Victoria University",
+        "date_awarded": "Semester 2, 2024",
+        "criteria": "High academic performance and consistent excellence"
+      },
+      {
+        "type": "Academic Achievement",
+        "name": "High Distinction in Database Systems",
+        "institution": "Victoria University",
+        "date_awarded": "2024",
+        "grade": "High Distinction",
+        "skills_demonstrated": ["SQL", "Database design", "Normalization", "Query optimization"]
+      },
+      {
+        "type": "Academic Achievement",
+        "name": "Top 10% in Object-Oriented Programming",
+        "institution": "Victoria University",
+        "date_awarded": "2024",
+        "ranking": "Top 10%",
+        "skills_demonstrated": ["Java", "OOP principles", "Design patterns", "Code quality"]
+      }
     ]
   },
   "projects_portfolio": [
@@ -220,7 +412,7 @@
   "career_goals": {
     "immediate": "Secure a Data Analyst internship or part-time junior developer role to gain industry experience",
     "short_term": "Graduate with honors, build a strong portfolio, and land a graduate developer position",
-    "long_term": "Become a full-stack developer and eventually progress to senior/lead developer role",
+    "long_term": "Become a data analytics and AI specialist, working on machine learning projects and data-driven solutions",
     "learning_focus": [
       "Mastering data structures and algorithms",
       "Building full-stack applications",
