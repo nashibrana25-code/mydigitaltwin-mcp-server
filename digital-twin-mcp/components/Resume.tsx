@@ -2,9 +2,9 @@
 
 export default function Resume() {
   return (
-    <div className="max-w-4xl mx-auto bg-white text-black shadow-2xl rounded-lg overflow-hidden">
+    <div className="max-w-4xl mx-auto bg-white text-black shadow-2xl rounded-lg overflow-hidden border border-gray-800">
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8">
+      <div className="bg-black text-white p-8 border-b-2 border-white">
         <h1 className="text-4xl font-bold mb-2">Nashib Rana Magar</h1>
         <p className="text-xl mb-4">2nd Year IT Student | AI Data Analyst Intern</p>
         <div className="flex flex-wrap gap-4 text-sm">
@@ -17,7 +17,7 @@ export default function Resume() {
 
       {/* Summary */}
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Professional Summary</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Professional Summary</h2>
         <p className="text-gray-700 leading-relaxed">
           Motivated 2nd year IT student with a unique combination of technical IT skills and accounting software expertise. 
           Currently completing a 10-week AI Data Analyst Industry Project Internship building production-ready enterprise 
@@ -28,7 +28,7 @@ export default function Resume() {
 
       {/* Experience */}
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Experience</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Experience</h2>
         
         <div className="mb-6">
           <div className="flex justify-between items-start mb-2">
@@ -50,7 +50,7 @@ export default function Resume() {
 
       {/* Education */}
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Education</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Education</h2>
         
         <div className="mb-4">
           <div className="flex justify-between items-start">
@@ -76,14 +76,14 @@ export default function Resume() {
 
       {/* Skills */}
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Technical Skills</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Technical Skills</h2>
         
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <h3 className="font-semibold mb-2 text-gray-800">Programming Languages</h3>
             <div className="flex flex-wrap gap-2">
               {['Java', 'Python', 'PHP', 'SQL', 'JavaScript', 'TypeScript'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-black text-white rounded-full text-sm border border-gray-800">
                   {skill}
                 </span>
               ))}
@@ -94,7 +94,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">Technologies & Tools</h3>
             <div className="flex flex-wrap gap-2">
               {['Docker', 'Next.js', 'Git', 'MySQL', 'PostgreSQL', 'Redis', 'Nginx'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-gray-800 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -105,7 +105,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">AI/ML & Cloud</h3>
             <div className="flex flex-wrap gap-2">
               {['RAG', 'Vector DB', 'LLM Integration', 'Vercel', 'Upstash'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-gray-900 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -116,7 +116,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">DevOps & Monitoring</h3>
             <div className="flex flex-wrap gap-2">
               {['Prometheus', 'Grafana', 'Docker Compose', 'CI/CD'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-gray-700 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -127,7 +127,7 @@ export default function Resume() {
 
       {/* Certifications */}
       <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Certifications</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Certifications</h2>
         <div className="space-y-3">
           <div>
             <h3 className="font-semibold">Accounting Package Certification (CAN Certified)</h3>
@@ -142,7 +142,7 @@ export default function Resume() {
 
       {/* Projects */}
       <div className="p-8">
-        <h2 className="text-2xl font-bold mb-4 text-blue-600">Key Projects</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Key Projects</h2>
         
         <div className="space-y-4">
           <div>
