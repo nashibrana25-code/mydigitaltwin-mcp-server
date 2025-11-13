@@ -66,10 +66,10 @@ export default function Resume() {
         <div>
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-semibold">Higher Secondary Education (Science)</h3>
-              <p className="text-gray-600">Prasadi Academy, Nepal</p>
+              <h3 className="text-xl font-semibold">Higher Secondary Education</h3>
+              <p className="text-gray-600">Satyawati Higher Secondary School, Nepal</p>
             </div>
-            <span className="text-sm text-gray-500">2020 - 2022</span>
+            <span className="text-sm text-gray-500">2021 - 2023</span>
           </div>
         </div>
       </div>
