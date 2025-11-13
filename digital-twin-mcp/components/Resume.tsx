@@ -1,8 +1,53 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function Resume() {
+  const [activeSection, setActiveSection] = useState('summary');
+
+  const scrollToSection = (id: string) => {
+    setActiveSection(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const sections = [
+    { id: 'summary', label: 'Summary' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'education', label: 'Education' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'certifications', label: 'Certifications' },
+    { id: 'projects', label: 'Projects' },
+  ];
+
   return (
-    <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
+    <div className="flex gap-6 max-w-6xl mx-auto">
+      {/* Sidebar Navigation */}
+      <div className="hidden lg:block w-48 flex-shrink-0">
+        <div className="sticky top-8 bg-white border border-gray-300 rounded-lg shadow-lg p-4">
+          <h3 className="text-sm font-bold text-gray-700 mb-4 uppercase">Sections</h3>
+          <nav className="space-y-2">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => scrollToSection(section.id)}
+                className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-colors ${
+                  activeSection === section.id
+                    ? 'bg-blue-600 text-white font-semibold'
+                    : 'text-gray-600 hover:bg-gray-100'
+                }`}
+              >
+                {section.label}
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Main Resume Content */}
+      <div className="flex-1 max-w-4xl bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8">
         <h1 className="text-4xl font-bold mb-2">Nashib Rana Magar</h1>
@@ -16,7 +61,7 @@ export default function Resume() {
       </div>
 
       {/* Summary */}
-      <div className="p-8 border-b border-gray-200">
+      <div id="summary" className="p-8 border-b border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Professional Summary</h2>
         <p className="text-gray-600 leading-relaxed">
           Motivated 2nd year IT student with a unique combination of technical IT skills and accounting software expertise. 
@@ -27,7 +72,7 @@ export default function Resume() {
       </div>
 
       {/* Experience */}
-      <div className="p-8 border-b border-gray-200">
+      <div id="experience" className="p-8 border-b border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Experience</h2>
         
         <div className="mb-6">
@@ -49,7 +94,7 @@ export default function Resume() {
       </div>
 
       {/* Education */}
-      <div className="p-8 border-b border-gray-200">
+      <div id="education" className="p-8 border-b border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Education</h2>
         
         <div className="mb-4">
@@ -75,7 +120,7 @@ export default function Resume() {
       </div>
 
       {/* Skills */}
-      <div className="p-8 border-b border-gray-200">
+      <div id="skills" className="p-8 border-b border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Technical Skills</h2>
         
         <div className="grid md:grid-cols-2 gap-4">
@@ -126,7 +171,7 @@ export default function Resume() {
       </div>
 
       {/* Certifications */}
-      <div className="p-8 border-b border-gray-200">
+      <div id="certifications" className="p-8 border-b border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Certifications</h2>
         <div className="space-y-3">
           <div>
@@ -141,7 +186,7 @@ export default function Resume() {
       </div>
 
       {/* Projects */}
-      <div className="p-8">
+      <div id="projects" className="p-8">
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Key Projects</h2>
         
         <div className="space-y-4">
@@ -162,5 +207,6 @@ export default function Resume() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
