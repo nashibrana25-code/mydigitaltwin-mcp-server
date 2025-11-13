@@ -130,11 +130,11 @@ export default function Resume() {
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Certifications</h2>
         <div className="space-y-3">
           <div>
-            <h3 className="font-semibold">Accounting Package Certification (CAN Certified)</h3>
+            <h3 className="font-semibold text-gray-800">Accounting Package Certification (CAN Certified)</h3>
             <p className="text-gray-600">BIG Computer Institute, Nepal</p>
           </div>
           <div>
-            <h3 className="font-semibold">AI Data Analyst Industry Project (In Progress)</h3>
+            <h3 className="font-semibold text-gray-800">AI Data Analyst Industry Project (In Progress)</h3>
             <p className="text-gray-600">10-week intensive bootcamp</p>
           </div>
         </div>
@@ -146,17 +146,17 @@ export default function Resume() {
         
         <div className="space-y-4">
           <div>
-            <h3 className="text-lg font-semibold">Digital Twin MCP Server</h3>
+            <h3 className="text-lg font-semibold text-gray-800">Digital Twin MCP Server</h3>
             <p className="text-gray-600">RAG-powered career assistant with enterprise architecture, deployed globally</p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold">Library Management System</h3>
+            <h3 className="text-lg font-semibold text-gray-800">Library Management System</h3>
             <p className="text-gray-600">PHP/MySQL application using MVC architecture</p>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold">Cybersecurity Lab Environment</h3>
+            <h3 className="text-lg font-semibold text-gray-800">Cybersecurity Lab Environment</h3>
             <p className="text-gray-600">Wazuh SIEM and Snort IDS implementation with 95% threat detection rate</p>
           </div>
         </div>
