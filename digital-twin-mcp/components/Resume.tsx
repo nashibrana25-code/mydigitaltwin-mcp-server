@@ -2,9 +2,9 @@
 
 export default function Resume() {
   return (
-    <div className="max-w-4xl mx-auto bg-white text-black shadow-2xl rounded-lg overflow-hidden border border-gray-800">
+    <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg overflow-hidden border border-gray-200">
       {/* Header Section */}
-      <div className="bg-black text-white p-8 border-b-2 border-white">
+      <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8">
         <h1 className="text-4xl font-bold mb-2">Nashib Rana Magar</h1>
         <p className="text-xl mb-4">2nd Year IT Student | AI Data Analyst Intern</p>
         <div className="flex flex-wrap gap-4 text-sm">
@@ -16,9 +16,9 @@ export default function Resume() {
       </div>
 
       {/* Summary */}
-      <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-black">Professional Summary</h2>
-        <p className="text-gray-700 leading-relaxed">
+      <div className="p-8 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Professional Summary</h2>
+        <p className="text-gray-600 leading-relaxed">
           Motivated 2nd year IT student with a unique combination of technical IT skills and accounting software expertise. 
           Currently completing a 10-week AI Data Analyst Industry Project Internship building production-ready enterprise 
           applications. Passionate about software development with hands-on experience in Java, Python, PHP, SQL, Docker, 
@@ -27,8 +27,8 @@ export default function Resume() {
       </div>
 
       {/* Experience */}
-      <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-black">Experience</h2>
+      <div className="p-8 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Experience</h2>
         
         <div className="mb-6">
           <div className="flex justify-between items-start mb-2">
@@ -38,7 +38,7 @@ export default function Resume() {
             </div>
             <span className="text-sm text-gray-500">Oct 2025 - Nov 2025</span>
           </div>
-          <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+          <ul className="list-disc list-inside space-y-2 text-gray-600 ml-4">
             <li>Built production-ready Digital Twin MCP Server using Next.js 15, AI/ML, and Docker</li>
             <li>Deployed to Vercel edge network with 100+ global locations</li>
             <li>Implemented enterprise stack: Nginx, Redis, PostgreSQL, Prometheus, Grafana</li>
@@ -49,8 +49,8 @@ export default function Resume() {
       </div>
 
       {/* Education */}
-      <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-black">Education</h2>
+      <div className="p-8 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Education</h2>
         
         <div className="mb-4">
           <div className="flex justify-between items-start">
@@ -60,7 +60,7 @@ export default function Resume() {
             </div>
             <span className="text-sm text-gray-500">2024 - Present (2nd Year)</span>
           </div>
-          <p className="text-gray-700 mt-2">Key Projects: Library Management System, Cybersecurity Lab, Web Development</p>
+          <p className="text-gray-600 mt-2">Key Projects: Library Management System, Cybersecurity Lab, Web Development</p>
         </div>
 
         <div>
@@ -75,15 +75,15 @@ export default function Resume() {
       </div>
 
       {/* Skills */}
-      <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-black">Technical Skills</h2>
+      <div className="p-8 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Technical Skills</h2>
         
         <div className="grid md:grid-cols-2 gap-4">
           <div>
             <h3 className="font-semibold mb-2 text-gray-800">Programming Languages</h3>
             <div className="flex flex-wrap gap-2">
               {['Java', 'Python', 'PHP', 'SQL', 'JavaScript', 'TypeScript'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-black text-white rounded-full text-sm border border-gray-800">
+                <span key={skill} className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -94,7 +94,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">Technologies & Tools</h3>
             <div className="flex flex-wrap gap-2">
               {['Docker', 'Next.js', 'Git', 'MySQL', 'PostgreSQL', 'Redis', 'Nginx'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-gray-800 text-white rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-blue-500 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -105,7 +105,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">AI/ML & Cloud</h3>
             <div className="flex flex-wrap gap-2">
               {['RAG', 'Vector DB', 'LLM Integration', 'Vercel', 'Upstash'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-gray-900 text-white rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-teal-600 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -116,7 +116,7 @@ export default function Resume() {
             <h3 className="font-semibold mb-2 text-gray-800">DevOps & Monitoring</h3>
             <div className="flex flex-wrap gap-2">
               {['Prometheus', 'Grafana', 'Docker Compose', 'CI/CD'].map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-gray-700 text-white rounded-full text-sm">
+                <span key={skill} className="px-3 py-1 bg-indigo-600 text-white rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -126,8 +126,8 @@ export default function Resume() {
       </div>
 
       {/* Certifications */}
-      <div className="p-8 border-b">
-        <h2 className="text-2xl font-bold mb-4 text-black">Certifications</h2>
+      <div className="p-8 border-b border-gray-200">
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Certifications</h2>
         <div className="space-y-3">
           <div>
             <h3 className="font-semibold">Accounting Package Certification (CAN Certified)</h3>
@@ -142,22 +142,22 @@ export default function Resume() {
 
       {/* Projects */}
       <div className="p-8">
-        <h2 className="text-2xl font-bold mb-4 text-black">Key Projects</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Key Projects</h2>
         
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-semibold">Digital Twin MCP Server</h3>
-            <p className="text-gray-700">RAG-powered career assistant with enterprise architecture, deployed globally</p>
+            <p className="text-gray-600">RAG-powered career assistant with enterprise architecture, deployed globally</p>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold">Library Management System</h3>
-            <p className="text-gray-700">PHP/MySQL application using MVC architecture</p>
+            <p className="text-gray-600">PHP/MySQL application using MVC architecture</p>
           </div>
           
           <div>
             <h3 className="text-lg font-semibold">Cybersecurity Lab Environment</h3>
-            <p className="text-gray-700">Wazuh SIEM and Snort IDS implementation with 95% threat detection rate</p>
+            <p className="text-gray-600">Wazuh SIEM and Snort IDS implementation with 95% threat detection rate</p>
           </div>
         </div>
       </div>
