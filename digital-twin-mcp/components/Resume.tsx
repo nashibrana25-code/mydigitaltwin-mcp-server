@@ -78,7 +78,7 @@ export default function Resume() {
         <div className="mb-6">
           <div className="flex justify-between items-start mb-2">
             <div>
-              <h3 className="text-xl font-semibold">AI Data Analyst Industry Project Internship</h3>
+              <h3 className="text-xl font-semibold text-gray-800">AI Data Analyst Industry Project Internship</h3>
               <p className="text-gray-600">AI Bootcamp / Industry Project</p>
             </div>
             <span className="text-sm text-gray-500">Oct 2025 - Nov 2025</span>
@@ -100,7 +100,7 @@ export default function Resume() {
         <div className="mb-4">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-semibold">Bachelor of Information Technology</h3>
+              <h3 className="text-xl font-semibold text-gray-800">Bachelor of Information Technology</h3>
               <p className="text-gray-600">Victoria University, Sydney</p>
             </div>
             <span className="text-sm text-gray-500">2024 - Present (2nd Year)</span>
@@ -111,7 +111,7 @@ export default function Resume() {
         <div>
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-semibold">Higher Secondary Education</h3>
+              <h3 className="text-xl font-semibold text-gray-800">Higher Secondary Education</h3>
               <p className="text-gray-600">Satyawati Higher Secondary School, Nepal</p>
             </div>
             <span className="text-sm text-gray-500">2021 - 2023</span>
