@@ -51,7 +51,7 @@ export default function Resume() {
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-8">
         <h1 className="text-4xl font-bold mb-2">Nashib Rana Magar</h1>
-        <p className="text-xl mb-4">2nd Year IT Student | AI Data Analyst Intern</p>
+        <p className="text-xl mb-4">2nd Year IT Student | Former AI Data Analyst Intern</p>
         <div className="flex flex-wrap gap-4 text-sm">
           <a href="mailto:nashibrana25@gmail.com" className="hover:underline">📧 nashibrana25@gmail.com</a>
           <a href="https://github.com/nashibrana25-code" target="_blank" rel="noopener noreferrer" className="hover:underline">💻 GitHub</a>
@@ -65,9 +65,9 @@ export default function Resume() {
         <h2 className="text-2xl font-bold mb-4 text-blue-800">Professional Summary</h2>
         <p className="text-gray-600 leading-relaxed">
           Motivated 2nd year IT student with a unique combination of technical IT skills and accounting software expertise. 
-          Currently completing a 10-week AI Data Analyst Industry Project Internship building production-ready enterprise 
-          applications. Passionate about software development with hands-on experience in Java, Python, PHP, SQL, Docker, 
-          and AI/ML technologies.
+          Successfully completed a 10-week AI Data Analyst Industry Project Internship (Oct-Nov 2025) building production-ready 
+          enterprise applications. Passionate about software development with hands-on experience in Java, Python, PHP, SQL, Docker, 
+          and AI/ML technologies. Actively seeking new opportunities to apply internship learnings to real-world projects.
         </p>
       </div>
 
@@ -81,11 +81,11 @@ export default function Resume() {
               <h3 className="text-xl font-semibold text-gray-800">AI Data Analyst Industry Project Internship</h3>
               <p className="text-gray-600">AI Bootcamp / Industry Project</p>
             </div>
-            <span className="text-sm text-gray-500">Oct 2025 - Nov 2025</span>
+            <span className="text-sm text-gray-500 whitespace-nowrap">Oct 2025 - Nov 2025 (Completed)</span>
           </div>
           <ul className="list-disc list-inside space-y-2 text-gray-600 ml-4">
             <li>Built production-ready Digital Twin MCP Server using Next.js 15, AI/ML, and Docker</li>
-            <li>Deployed to Vercel edge network with 100+ global locations</li>
+            <li>Deployed to Vercel edge network with 100+ global locations (live and maintained)</li>
             <li>Implemented enterprise stack: Nginx, Redis, PostgreSQL, Prometheus, Grafana</li>
             <li>Achieved 60% cost reduction through strategic caching while maintaining $0/month operational cost</li>
             <li>Created comprehensive enterprise documentation for security, scalability, and monitoring</li>
@@ -179,8 +179,8 @@ export default function Resume() {
             <p className="text-gray-600">BIG Computer Institute, Nepal</p>
           </div>
           <div>
-            <h3 className="font-semibold text-gray-800">AI Data Analyst Industry Project (In Progress)</h3>
-            <p className="text-gray-600">10-week intensive bootcamp</p>
+            <h3 className="font-semibold text-gray-800">AI Data Analyst Industry Project</h3>
+            <p className="text-gray-600">10-week intensive bootcamp - Successfully Completed (Nov 2025)</p>
           </div>
         </div>
       </div>
