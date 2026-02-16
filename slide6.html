@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Technical Implementation</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1b2f;
+            margin: 0;
+            padding: 0;
+            min-height: 720px;
+            color: white;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 4rem;
+        }
+        .section-card {
+            background: rgba(30, 35, 65, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1rem;
+            flex: 1;
+            min-height: 140px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.4);
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-content {
+            font-size: 0.95rem;
+            color: #e0e7ff;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+        .icon-container {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        .tech-badge {
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.8rem;
+            margin: 0.25rem;
+            display: inline-block;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto%20Sans%20JP:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&amp;display=swap" rel="stylesheet"></head>
+<body style="">
+<div class="slide-container" style="background-color: rgb(0, 0, 0);">
+<h1 class="main-title">Technical Implementation</h1>
+<div class="grid-container">
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-cogs text-white text-xl"></i>
+</div>
+<h2>Framework</h2>
+</div>
+<p class="section-content">Next.js 15.5.3+ with TypeScript<br>Full-stack React framework with built-in API routes<br>Enterprise-ready with excellent TypeScript support</p>
+</div>
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-database text-white text-xl"></i>
+</div>
+<h2>Vector DB</h2>
+</div>
+<p class="section-content">Upstash Vector with embedding models<br>Serverless vector database for semantic search<br>Redis-compatible with global edge deployment</p>
+</div>
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-brain text-white text-xl"></i>
+</div>
+<h2>LLM</h2>
+</div>
+<p class="section-content">Groq API with LLaMA 3.3 70B<br>Ultra-fast inference for real-time responses<br>Advanced reasoning capabilities for complex queries</p>
+</div>
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-plug text-white text-xl"></i>
+</div>
+<h2>MCP Integration</h2>
+</div>
+<p class="section-content">JSON-RPC 2.0 protocol<br>Standardized AI tool integration<br>Seamless connection with Claude Desktop and GitHub Copilot</p>
+</div>
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-rocket text-white text-xl"></i>
+</div>
+<h2>Deployment</h2>
+</div>
+<p class="section-content">Vercel (serverless) with Docker support<br>Edge functions for global performance<br>Automatic scaling and zero-config deployment</p>
+</div>
+<div class="section-card">
+<div class="section-title">
+<div class="icon-container">
+<i class="fas fa-code text-white text-xl"></i>
+</div>
+<h2>Code Quality</h2>
+</div>
+<p class="section-content">TypeScript with strict mode<br>ESLint and Prettier configuration<br>Comprehensive error handling and logging</p>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Solution Architecture</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1b2f;
+            margin: 0;
+            padding: 0;
+            min-height: 720px;
+            color: white;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 4rem;
+        }
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .architecture-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+        }
+        .component-card {
+            background: rgba(30, 35, 65, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 10;
+        }
+        .component-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #60a5fa;
+            margin-bottom: 0.75rem;
+        }
+        .component-desc {
+            font-size: 0.85rem;
+            color: #e0e7ff;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        .icon-container {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            flex-shrink: 0;
+        }
+        .arrow {
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            z-index: 5;
+        }
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #6366f1;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+        .arrow1 { top: 50%; left: 200px; }
+        .arrow2 { top: 50%; right: 200px; }
+        .arrow3 { top: 30%; left: 50%; transform: translateX(-50%) rotate(90deg); }
+    </style>
+</head>
+<body style="">
+<div class="slide-container" style="background-color: rgb(0, 0, 0);">
+<h1 class="main-title">Solution Architecture</h1>
+<div class="architecture-container">
+<div class="component-card">
+<div class="icon-container">
+<i class="fas fa-user-circle text-white text-xl"></i>
+</div>
+<h3 class="component-title">Digital Twin Profile</h3>
+<p class="component-desc">JSON-based professional data</p>
+</div>
+<div class="arrow arrow1"></div>
+<div class="component-card">
+<div class="icon-container">
+<i class="fas fa-database text-white text-xl"></i>
+</div>
+<h3 class="component-title">Upstash Vector Database</h3>
+<p class="component-desc">Embeddings for semantic search</p>
+</div>
+<div class="arrow arrow2"></div>
+<div class="component-card">
+<div class="icon-container">
+<i class="fas fa-robot text-white text-xl"></i>
+</div>
+<h3 class="component-title">Groq LLM</h3>
+<p class="component-desc">LLaMA 3.3 for response generation</p>
+</div>
+<div class="arrow arrow3"></div>
+<div class="component-card">
+<div class="icon-container">
+<i class="fas fa-server text-white text-xl"></i>
+</div>
+<h3 class="component-title">MCP Server</h3>
+<p class="component-desc">Standardized AI integration protocol</p>
+</div>
+</div>
+</div>
+
+</body></html>
