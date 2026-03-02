@@ -70,7 +70,7 @@ digital-twin-mcp/
 │   ├── globals.css               # Global styles
 │   └── api/
 │       └── mcp/
-│           └── route.ts          # ★ MCP API endpoint (SSE + JSON-RPC)
+│           └── route.ts          # ★ MCP API endpoint (Streamable HTTP)
 ├── lib/                          # Core libraries
 │   ├── vector.ts                 # Upstash Vector client & search
 │   ├── groq.ts                   # Groq LLM client & generation
