@@ -12,8 +12,8 @@ A **Model Context Protocol (MCP)** server that creates a digital twin assistant,
 ┌─────────────────────┐     ┌──────────────────────────────────┐
 │   Claude Desktop    │     │     Vercel (Production)          │
 │   or MCP Client     │────▶│  Next.js API Route (/api/mcp)   │
-│   via mcp-remote    │◀────│    ├── SSE Transport (GET)       │
-└─────────────────────┘     │    └── JSON-RPC (POST)           │
+│   via mcp-remote    │◀────│    Streamable HTTP (POST)        │
+└─────────────────────┘     │                                  │
                             │            │                     │
                             │            ▼                     │
                             │   ┌──────────────────┐           │
@@ -39,7 +39,7 @@ A **Model Context Protocol (MCP)** server that creates a digital twin assistant,
 - **RAG-Powered Responses** — Retrieval-Augmented Generation for accurate, context-aware answers
 - **Vector Search** — Semantic search using Upstash Vector with automatic embeddings
 - **Fast LLM** — Groq API with LLaMA 3.1 for ultra-fast response generation
-- **MCP Protocol** — Standard Model Context Protocol with SSE + JSON-RPC transport
+- **MCP Protocol** — Standard Model Context Protocol with Streamable HTTP transport
 - **Dual Deployment** — Runs on Vercel (24/7 cloud) or locally (stdio)
 - **Two Tools** — `query_digital_twin` (RAG query) and `search_profile` (semantic search)
 
@@ -82,6 +82,9 @@ digital-twin-mcp/
 │   └── ChatWidget.tsx            # Chat interface widget
 ├── scripts/
 │   └── upload-profile.ts         # Upload digitaltwin.json to Upstash Vector
+├── tests/                        # Integration tests
+│   ├── run_recruiter_tests.py    # Recruiter query test suite
+│   └── recruiter_queries.json    # Test query data
 ├── start-server.js               # Local server launcher (loads .env.local)
 ├── .env.local                    # Environment variables (not committed)
 ├── .env.example                  # Environment template
@@ -242,12 +245,12 @@ Add these in the [Vercel Dashboard](https://vercel.com/) under **Settings > Envi
 
 ## How It Works
 
-1. **Client Connects** — `mcp-remote` establishes SSE connection via GET `/api/mcp`
-2. **Question Received** — Client sends JSON-RPC request via POST `/api/mcp`
+1. **Client Connects** — `mcp-remote` sends JSON-RPC requests via POST to `/api/mcp`
+2. **Question Received** — MCP server parses the JSON-RPC tool call
 3. **Vector Search** — Query is embedded and matched against Upstash Vector database
 4. **Context Retrieved** — Top K most relevant profile chunks are gathered
 5. **LLM Generation** — Groq LLaMA generates a personalized response using context
-6. **Response Returned** — Answer sent back via SSE stream to the client
+6. **Response Returned** — JSON-RPC response sent back to the client
 
 ---
 
