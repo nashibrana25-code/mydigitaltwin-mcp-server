@@ -60,48 +60,7 @@ curl -s -X POST https://digital-twin-mcp-ten.vercel.app/api/mcp \
 
 Expected: AI-generated response about the person's professional background.
 
-### 6. Rate limiting returns JSON-RPC (not HTML)
-
-Verify the 429 response is proper JSON-RPC, not an HTML error page:
-
-```bash
-# Send 35 rapid requests to trigger the public rate limit.
-for i in $(seq 1 35); do
-  curl -s -o /dev/null -w "%{http_code}\n" -X POST https://digital-twin-mcp-ten.vercel.app/api/mcp \
-    -H "Content-Type: application/json" \
-    -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}'
-done
-```
-
-When the 429 fires it should return:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "error": {
-    "code": -32000,
-    "message": "Rate limit exceeded. Retry after XX seconds."
-  }
-}
-```
-
-### 7. Shared secret bypasses rate limit
-
-Set `MCP_SHARED_SECRET` in Vercel env vars (any non-empty string). Then test with the secret header:
-
-```bash
-# Replace YOUR_SECRET with the value of MCP_SHARED_SECRET set in Vercel.
-curl -s -X POST https://digital-twin-mcp-ten.vercel.app/api/mcp \
-  -H "Content-Type: application/json" \
-  -H "x-mcp-secret: YOUR_SECRET" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list","params":{}}' \
-  | python -m json.tool
-```
-
-Expected: Tools listed even after the public rate limit has been hit.
-
-### 8. Claude Desktop connects
+### 6. Claude Desktop connects
 
 1. Add config to `claude_desktop_config.json`:
 

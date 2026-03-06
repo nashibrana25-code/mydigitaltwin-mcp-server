@@ -4,73 +4,6 @@ import { generateResponse } from "@/lib/groq";
 export const runtime = 'nodejs';
 export const maxDuration = 60;
 
-// ---------------------------------------------------------------------------
-// Rate limiting (in-memory, per Vercel function instance)
-// Public limit: 30 requests / minute per IP.
-// Trusted clients (claude-desktop header or valid MCP_SHARED_SECRET) are exempt.
-// ---------------------------------------------------------------------------
-const RATE_LIMIT_WINDOW_MS = 60_000;
-const RATE_LIMIT_MAX = 30;
-const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
-
-function getClientIp(request: Request): string {
-  return (
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
-    request.headers.get('x-real-ip') ??
-    'unknown'
-  );
-}
-
-function isTrustedClient(request: Request): boolean {
-  // Allow any client that self-identifies as claude-desktop.
-  if (request.headers.get('x-mcp-client') === 'claude-desktop') return true;
-
-  // Allow if the caller presents the shared secret (primary bypass mechanism).
-  const sharedSecret = process.env.MCP_SHARED_SECRET;
-  if (sharedSecret && request.headers.get('x-mcp-secret') === sharedSecret) return true;
-
-  return false;
-}
-
-function checkRateLimit(ip: string): { allowed: boolean; retryAfter: number } {
-  const now = Date.now();
-  const entry = rateLimitStore.get(ip);
-
-  if (!entry || now >= entry.resetAt) {
-    rateLimitStore.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
-    return { allowed: true, retryAfter: 0 };
-  }
-
-  if (entry.count >= RATE_LIMIT_MAX) {
-    return { allowed: false, retryAfter: Math.ceil((entry.resetAt - now) / 1000) };
-  }
-
-  entry.count++;
-  return { allowed: true, retryAfter: 0 };
-}
-
-function rateLimitedResponse(retryAfter: number, id: unknown = null): Response {
-  const body = JSON.stringify({
-    jsonrpc: '2.0',
-    id,
-    error: {
-      code: -32000,
-      message: `Rate limit exceeded. Retry after ${retryAfter} seconds.`,
-    },
-  });
-  return new Response(body, {
-    status: 429,
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Retry-After': String(retryAfter),
-      'X-RateLimit-Limit': String(RATE_LIMIT_MAX),
-      'X-RateLimit-Remaining': '0',
-    },
-  });
-}
-// ---------------------------------------------------------------------------
-
 // Store SSE connections keyed by session ID
 const sessions = new Map<string, (data: string) => void>();
 
@@ -253,14 +186,6 @@ export async function POST(request: Request) {
   const url = new URL(request.url);
   const sessionId = url.searchParams.get('sessionId');
 
-  // Apply rate limiting to untrusted clients.
-  if (!isTrustedClient(request)) {
-    const { allowed, retryAfter } = checkRateLimit(getClientIp(request));
-    if (!allowed) {
-      return rateLimitedResponse(retryAfter);
-    }
-  }
-
   try {
     const body = await request.json();
     const response = await handleJsonRpc(body);
@@ -321,7 +246,7 @@ export async function OPTIONS() {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, x-mcp-client, x-mcp-secret',
+      'Access-Control-Allow-Headers': 'Content-Type',
     },
   });
 }
