@@ -81,6 +81,9 @@ Edit `.env` with your credentials:
 UPSTASH_VECTOR_REST_URL=https://your-endpoint.upstash.io
 UPSTASH_VECTOR_REST_TOKEN=your-token-here
 GROQ_API_KEY=gsk_your-api-key-here
+
+# Optional: bypass rate limiting for trusted clients (generate with: openssl rand -hex 32)
+MCP_SHARED_SECRET=your-secret-here
 ```
 
 ### 3. Upload profile data

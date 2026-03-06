@@ -35,8 +35,30 @@ Set these in **Vercel → Project → Settings → Environment Variables**:
 | `UPSTASH_VECTOR_REST_URL` | Upstash Vector endpoint | `https://your-endpoint.upstash.io` |
 | `UPSTASH_VECTOR_REST_TOKEN` | Upstash Vector auth token | `AX...` |
 | `GROQ_API_KEY` | Groq API key | `gsk_...` |
+| `MCP_SHARED_SECRET` | Rate-limit bypass secret (optional) | any strong random string |
 
-All three are required for production.
+`UPSTASH_VECTOR_REST_URL`, `UPSTASH_VECTOR_REST_TOKEN`, and `GROQ_API_KEY` are required for production.
+
+`MCP_SHARED_SECRET` is optional. If set, callers who include `x-mcp-secret: <value>` in their request headers bypass the public rate limit (30 req/min per IP). Generate a safe value with `openssl rand -hex 32`.
+
+---
+
+## Rate Limiting
+
+`/api/mcp` applies an in-memory rate limit of **30 POST requests per IP per minute** for public (untrusted) clients.
+
+Two bypass mechanisms exist:
+
+| Header | Value | Effect |
+|--------|-------|--------|
+| `x-mcp-client` | `claude-desktop` | Bypass (honour system — no secret required) |
+| `x-mcp-secret` | value of `MCP_SHARED_SECRET` | Bypass (verified) |
+
+When the limit is hit, the response is always JSON-RPC (not HTML):
+
+```json
+{ "jsonrpc": "2.0", "id": null, "error": { "code": -32000, "message": "Rate limit exceeded. Retry after N seconds." } }
+```
 
 ---
 
