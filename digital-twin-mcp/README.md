@@ -2,7 +2,7 @@
 
 A **Model Context Protocol (MCP)** server that creates a digital twin assistant, answering questions about a person's professional profile using **RAG (Retrieval-Augmented Generation)**. Deployed live on Vercel for 24/7 access.
 
-**Live URL:** `https://digital-twin-mcp-ten.vercel.app/api/mcp`
+**Live URL:** `https://mydigitaltwin-mcp-server.vercel.app/api/mcp`
 
 ---
 
@@ -187,7 +187,7 @@ Add to `claude_desktop_config.json`:
       "args": [
         "-y",
         "mcp-remote",
-        "https://digital-twin-mcp-ten.vercel.app/api/mcp"
+        "https://mydigitaltwin-mcp-server.vercel.app/api/mcp"
       ]
     }
   }
@@ -216,7 +216,7 @@ Add to `.vscode/mcp.json`:
   "mcpServers": {
     "digital-twin": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://digital-twin-mcp-ten.vercel.app/api/mcp"]
+      "args": ["-y", "mcp-remote", "https://mydigitaltwin-mcp-server.vercel.app/api/mcp"]
     }
   }
 }

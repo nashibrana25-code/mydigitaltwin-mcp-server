@@ -2,9 +2,9 @@
 
 A **Model Context Protocol (MCP)** server that creates a digital twin assistant, answering questions about a professional profile using **RAG (Retrieval-Augmented Generation)**. Includes a resume/chat UI and a live MCP endpoint for Claude Desktop.
 
-**Live MCP URL:** `https://digital-twin-mcp-ten.vercel.app/api/mcp`
+**Live MCP URL:** `https://mydigitaltwin-mcp-server.vercel.app/api/mcp`
 
-**Live UI:** [https://digital-twin-mcp-ten.vercel.app](https://digital-twin-mcp-ten.vercel.app)
+**Live UI:** [https://mydigitaltwin-mcp-server.vercel.app](https://mydigitaltwin-mcp-server.vercel.app)
 
 ---
 
@@ -111,7 +111,7 @@ Add to your Claude Desktop config (`claude_desktop_config.json`):
       "args": [
         "-y",
         "mcp-remote",
-        "https://digital-twin-mcp-ten.vercel.app/api/mcp"
+        "https://mydigitaltwin-mcp-server.vercel.app/api/mcp"
       ]
     }
   }
